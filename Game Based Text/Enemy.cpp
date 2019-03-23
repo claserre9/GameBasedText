@@ -38,5 +38,5 @@ int Enemy::getHealth() {
 };
 
 int Enemy::setHealth(int h) {
-	this->health = h;
+	return this->health = h;
 }

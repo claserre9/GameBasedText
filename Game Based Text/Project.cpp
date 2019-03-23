@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Room.h"
 #include "Enemy.h"
+#include "Caporal.h"
 
 using namespace std;
 
