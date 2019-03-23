@@ -42,7 +42,7 @@ int main() {
 
 		currentRoom = currentRoom->getRoom(userInput);
 		if (currentRoom->getDescription() == "Desert") {
-			cout << "You're free from camp!" << endl;
+			cout << "You're free from camp !" << endl;
 			break;
 		}
 	}

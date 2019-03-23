@@ -151,13 +151,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Room.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Caporal.cpp" />
+    <ClCompile Include="Captain.cpp" />
+    <ClCompile Include="Colonel.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Lieutenant.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Project.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="Sergeant.cpp" />
+    <ClCompile Include="Major.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
