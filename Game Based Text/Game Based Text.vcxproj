@@ -151,9 +151,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Caporal.h" />
+    <ClInclude Include="Captain.h" />
+    <ClInclude Include="Colonel.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Lieutenant.h" />
+    <ClInclude Include="Major.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="Sergeant.h" />
+    <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Caporal.cpp" />
@@ -166,6 +173,7 @@
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Sergeant.cpp" />
     <ClCompile Include="Major.cpp" />
+    <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

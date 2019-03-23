@@ -1,22 +1,12 @@
-
-#include <string>
 #include <iostream>
-#include "Enemy.h"
+#include "Captain.h"
 
+using namespace std;
 
-class Captain :public Enemy {
+void Captain::attack() {
+	cout << "Attack as Captain" << endl;
+};
 
-	Captain(string grade, string name, int health) :
-		Enemy(grade, name, health) {
-	}
-
-	void attack() {
-		cout << "Attack as Captain" << endl;
-	}
-
-	void defend() {
-		cout << "Defend as Captain" << endl;
-	}
-
-
+void Captain::defend() {
+	cout << "Defend as Captain" << endl;
 };

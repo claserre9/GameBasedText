@@ -3,11 +3,14 @@
 #include <vector>
 #include <iostream>
 #include "Room.h"
+#include "Enemy.h"
 
 using namespace std;
 
 
 int main() {
+
+	Caporal c1("ab0", "sa", 2);
 
 	vector<Room*> rooms;
 	Room* currentRoom;

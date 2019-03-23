@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-
 using namespace std;
 
 class Enemy {
@@ -11,6 +9,7 @@ private:
 	int health;
 
 public:
+	Enemy();
 	Enemy(string grade, string name, int health);
 	virtual ~Enemy();
 	string getGrade();
@@ -20,4 +19,3 @@ public:
 	virtual void attack() = 0;
 	virtual void defend() = 0;
 };
-

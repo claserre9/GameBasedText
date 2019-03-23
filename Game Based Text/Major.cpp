@@ -1,21 +1,12 @@
-#include <string>
 #include <iostream>
-#include "Enemy.h"
+#include "Major.h"
 
+using namespace std;
 
-class Major :public Enemy {
+void Major::attack() {
+	cout << "Attack as Major" << endl;
+};
 
-	Major(string grade, string name, int health) :
-		Enemy(grade, name, health) {
-	}
-
-	void attack() {
-		cout << "Attack as Major" << endl;
-	}
-
-	void defend() {
-		cout << "Defend as Major" << endl;
-	}
-
-
+void Major::defend() {
+	cout << "Defend as Major" << endl;
 };

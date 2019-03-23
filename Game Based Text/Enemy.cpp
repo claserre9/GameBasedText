@@ -1,6 +1,14 @@
 
 #include <string>
+
 #include "Enemy.h"
+
+
+Enemy::Enemy() {
+	this->grade = "";
+	this->name = "";
+	this->health = 1;
+}
 
 Enemy::Enemy(string grade, string name, int health) {
 	this->grade = grade;
@@ -30,6 +38,5 @@ int Enemy::getHealth() {
 };
 
 int Enemy::setHealth(int h) {
-	 this->health = h;
-	 return health;
+	this->health = h;
 }
