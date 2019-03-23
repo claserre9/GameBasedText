@@ -12,6 +12,7 @@ using namespace std;
 int main() {
 
 	Caporal c1("ab0", "sa", 2);
+	c1.attack();
 
 	vector<Room*> rooms;
 	Room* currentRoom;
