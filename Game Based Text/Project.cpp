@@ -3,24 +3,22 @@
 #include <vector>
 #include <iostream>
 #include "Room.h"
-#include "Enemy.h"
-#include "Caporal.h"
 #include "Utilities.h"
+#include "Player.h"
 
 using namespace std;
 
 
 int main() {
 
-	displayStory();
-	displayMap();
+	Player usmarine("Clifford", 10);
 
 	vector<Room*> rooms;
 	Room* currentRoom;
 	currentRoom = NULL;
 	string userInput;
 
-	rooms.push_back(new Room("Barracks"));
+	rooms.push_back(new Room("Barracks", false, {"Map","Knife"}));
 	rooms.push_back(new Room("Messhall"));
 	rooms.push_back(new Room("SchoolHouse"));
 	rooms.push_back(new Room("RunningField"));
@@ -37,18 +35,22 @@ int main() {
 	rooms[5]->setRooms(nullptr, nullptr, nullptr, rooms[4]);
 
 	currentRoom = rooms[0];
+	usmarine.accessRoom(currentRoom); //This is the way USMARINE access a room by the method "accessRoom()"
 
 	while (userInput != "QUIT") {
 		if (currentRoom != nullptr) {
-			cout << currentRoom->getDescription() << endl;
+			cout <<"You are in the "<< currentRoom->getDescription() << endl;
 		}
 
-		cout << "Where do you want to go? " << endl;
-		getline(cin, userInput);
+		Menu(usmarine, currentRoom);
+
+		cout << "\nWhere do you want to go now? " << endl;
+		cin >> userInput;
 
 		currentRoom = currentRoom->getRoom(userInput);
+		usmarine.accessRoom(currentRoom); //The ma
 		if (currentRoom->getDescription() == "Desert") {
-			cout << "You're free from camp !" << endl;
+			cout << "You're free from camp, you can escape now !!!" << endl;
 			break;
 		}
 	}

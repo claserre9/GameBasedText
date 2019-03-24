@@ -16,6 +16,10 @@ Player::Player(string playername, int health) {
 Player::~Player() {
 }
 
+Room * Player::getCurrentRoom(){
+	return this->CurrentRoom;
+}
+
 void Player::search() {
 	this->CurrentRoom->showItems();
 }
@@ -33,8 +37,11 @@ void Player::accessRoom(Room* room) {
 
 void Player::getInventory(){
 	if (this->inventory.size() != 0) {
-		for (auto i = this->inventory.begin(); i != this->inventory.end(); ++i)
-			cout << *i << '--';
+		cout << "You have : " << endl;
+		for (auto i = this->inventory.begin(); i != this->inventory.end(); ++i) {
+			cout << *i << endl;
+		}
+			
 	}
 	else {
 		cout << "Your inventory is empty" << endl;

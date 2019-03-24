@@ -1,5 +1,10 @@
 #include "Utilities.h"
+#include <cstdlib>
+#include <string>
 #include <iostream>
+#include "Room.h"
+#include "Player.h"
+
 
 using namespace std;
 void displayStory() {
@@ -52,6 +57,41 @@ void displayMap() {
 	cout << " #                                              |*  *  *  *  *  *  * # " << endl;
 	cout << " #                                              |*  *  *  *  *  *  * # " << endl;
 	cout << " ##################################################################### " << endl;
+	
+}
+
+void Menu(Player player, Room* room){
+	int choice = 0;
+	string element;
+	do {
+		cout << "\nWhich action do you want to perform : " << endl;
+		cout << "1 - Display map" << endl;
+		cout << "2 - Search in the room" << endl;
+		cout << "3 - Take a specific a item in the room" << endl;
+		cout << "4 - Show inventory" << endl;
+		cout << "5 - Continue to escape ... \n" << endl;
+		cin >> choice;
+		
+		switch (choice) {
+			case 1: displayMap(); 
+				break;
+			case 2: 
+				player.search(); 
+				break;
+			case 3: 
+				cout << "What's the object you wanna take in this room: " << endl;
+				cin >> element;
+				player.take(element); 
+				room->removeItem(element);
+				break;
+			case 4:
+				player.getInventory();
+				break;
+			case 5:break;
+			default:cout << "Unknown choice" << endl; break;
+		}
+	} while (choice != 5);
+	
 	
 }
 

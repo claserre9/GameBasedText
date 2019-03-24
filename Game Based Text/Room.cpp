@@ -70,8 +70,12 @@ void Room::removeItem(string element) {
 }
 	
 void Room::showItems() {
-	for (auto i = this->listOfitems.begin(); i != this->listOfitems.end(); ++i)
-		cout <<"--"<< *i << '--';
+	cout << "There are : \n" << endl;
+	for (auto i = this->listOfitems.begin(); i != this->listOfitems.end(); ++i) {
+		cout << *i << endl;
+	}
+
+		
 }
 
 

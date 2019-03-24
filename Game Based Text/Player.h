@@ -22,6 +22,7 @@ public:
 	//void attack();
 	//void defend();
 
+	Room * getCurrentRoom();
 	void search();
 	void open();
 	void take(string element);
