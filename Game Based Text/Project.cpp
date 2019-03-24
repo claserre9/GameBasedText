@@ -5,14 +5,15 @@
 #include "Room.h"
 #include "Enemy.h"
 #include "Caporal.h"
+#include "Utilities.h"
 
 using namespace std;
 
 
 int main() {
 
-	Caporal c1("ab0", "sa", 2);
-	c1.attack();
+	displayStory();
+	displayMap();
 
 	vector<Room*> rooms;
 	Room* currentRoom;
