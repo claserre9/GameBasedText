@@ -43,15 +43,13 @@ void Player::getInventory(){
 }
 
 void Player::take(string element) {
-	if (find(this->CurrentRoom->getListItems.begin(), this->CurrentRoom->getListItems.end(), element) != this->CurrentRoom->getListItems.end()) {
 		this->inventory.push_back(element);
-	}
-	
 }
+	
 
 void Player::open() {
 	if (find(this->inventory.begin(), this->inventory.end(), "Key") != this->inventory.end()) {
-		if (this->CurrentRoom->getRoomLockStatus == false) {
+		if (this->CurrentRoom->getRoomLockStatus()) {
 			this->CurrentRoom->setRoomLockStatus(true);
 		}
 	}
