@@ -5,6 +5,7 @@
 #include "Room.h"
 #include "Utilities.h"
 #include "Player.h"
+#include "Caporal.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ int main() {
 	cout << endl;
 
 	Player usmarine("Clifford", 10);
+	Caporal caporalYun("Caporal", "Yun", 2);
 
 	vector<Room*> rooms;
 	Room* currentRoom;
@@ -23,8 +25,8 @@ int main() {
 	string userInput;
 
 	rooms.push_back(new Room("Barracks", false, {"Map","Knife"}));
-	rooms.push_back(new Room("Messhall"));
-	rooms.push_back(new Room("SchoolHouse"));
+	rooms.push_back(new Room("Messhall", false, {"Food","Books","Ammo"}));
+	rooms.push_back(new Room("SchoolHouse", true, {"Gun"}));
 	rooms.push_back(new Room("RunningField"));
 	rooms.push_back(new Room("Tunnel"));
 	rooms.push_back(new Room("Desert"));
@@ -43,12 +45,18 @@ int main() {
 
 	while (userInput != "QUIT") {
 		if (currentRoom != nullptr) {
-			cout <<"You are in the "<< currentRoom->getDescription() << endl;
+			cout <<"\n\nYou are in the "<< currentRoom->getDescription() << endl;
 		}
 		
-		MenuWithOutMap(usmarine, currentRoom);
+		if (currentRoom->getDescription() == "Messhall" && caporalYun.getHealth() != 0) {
+			cout << "\n\nHEY!!! You were spot by korean soldier" << endl;
+			cout << "YOU HAVE TO FIGHT WITH HIM BEFORE HE RINGS THE ALARM" << endl;
+			figthscene_1(usmarine, caporalYun,currentRoom);
+		}
 
+		Menu(usmarine, currentRoom);
 
+		
 		cout << "\nWhere do you want to go now? " << endl;
 		cin >> userInput;
 

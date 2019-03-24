@@ -60,7 +60,7 @@ void displayMap() {
 	
 }
 
-void MenuWithMap(Player& player, Room* room){
+void MenuWithMap(Player& player, Room* & room){
 	int choice = 0;
 	string element;
 	do {
@@ -93,7 +93,7 @@ void MenuWithMap(Player& player, Room* room){
 	} while (choice != 5);
 }
 
-void MenuWithOutMap(Player& player, Room* room) {
+void Menu(Player& player, Room* & room) {
 	
 	int choice = 0;
 	string element;
@@ -128,6 +128,36 @@ void MenuWithOutMap(Player& player, Room* room) {
 		default:cout << "Unknown choice" << endl; break;
 		}
 	} while (choice != 4);
+}
+
+void figthscene_1(Player & player, Caporal & caporal, Room* & room){
+	int choice = 0;
+	do {
+		cout << "\nWhich action do you want to perform : " << endl;
+		cout << "1 - Use your hand to fight" << endl;
+		vector<string> usmarineItems = player.get_items_taken();
+		if (find(usmarineItems.begin(), usmarineItems.end(), "Knife") != usmarineItems.end())
+			cout << "2 - Use Knife to kill him quickly" << endl;
+		cin >> choice;
+
+		switch (choice) {
+		case 1: 
+			cout << "\nYou win the fight, but you are slightly injured!!";
+			player.setHealth(player.getHealth()-caporal.getHealth());
+			caporal.setHealth(0);
+			room->addIteminList("Key");
+			choice = 2;
+			break;
+		case 2 : 
+			cout << "\n\nYou kill the korean caporal!!";
+			caporal.setHealth(0);
+			room->addIteminList("Key");
+			choice = 2;
+			break;
+		default:cout << "Unknown choice" << endl; break;
+		}
+	} while (choice!=2);
+
 }
 
 

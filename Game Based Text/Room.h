@@ -27,6 +27,8 @@ public:
 	bool getRoomLockStatus();
 	void setRoomLockStatus(bool b);
 
+	void addIteminList(string element);
+
 private:
 	// List of items
 	string description;

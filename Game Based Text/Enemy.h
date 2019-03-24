@@ -15,7 +15,7 @@ public:
 	string getGrade();
 	string getName();
 	int getHealth();
-	int setHealth(int h);
+	void setHealth(int h);
 	virtual void attack() = 0;
 	virtual void defend() = 0;
 };

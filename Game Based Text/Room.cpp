@@ -46,6 +46,10 @@ void Room::setRoomLockStatus(bool b){
 	this->roomlocked = b;
 }
 
+void Room::addIteminList(string element){
+	this->listOfitems.push_back(element);
+}
+
 Room* Room::getRoom(std::string direction) {
 	if (direction == "North" && this->northRoom != nullptr) {
 		return this->northRoom;
@@ -77,5 +81,7 @@ void Room::showItems() {
 
 		
 }
+
+
 
 

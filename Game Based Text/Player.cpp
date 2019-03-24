@@ -49,6 +49,14 @@ void Player::getInventory(){
 
 }
 
+void Player::setHealth(int h){
+	this->health = h;
+}
+
+int Player::getHealth(){
+	return this->health;
+}
+
 vector<string> Player::get_items_taken(){
 	return this->inventory;
 }
