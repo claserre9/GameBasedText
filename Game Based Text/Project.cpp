@@ -10,10 +10,10 @@ using namespace std;
 
 
 int main() {
-	string dummy;
+
 	displayStory();
-	cout << "Press any key to continue ...." << endl;
-	cin >> dummy;
+	system("pause");
+	cout << endl;
 
 	Player usmarine("Clifford", 10);
 
@@ -45,8 +45,9 @@ int main() {
 		if (currentRoom != nullptr) {
 			cout <<"You are in the "<< currentRoom->getDescription() << endl;
 		}
+		
+		MenuWithOutMap(usmarine, currentRoom);
 
-		Menu(usmarine, currentRoom);
 
 		cout << "\nWhere do you want to go now? " << endl;
 		cin >> userInput;

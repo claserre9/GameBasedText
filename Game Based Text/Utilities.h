@@ -4,4 +4,5 @@
 
 void displayStory();
 void displayMap();
-void Menu(Player player, Room* room);
+void MenuWithMap(Player& player, Room* room);
+void MenuWithOutMap(Player& player, Room* room);

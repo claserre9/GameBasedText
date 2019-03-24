@@ -29,5 +29,6 @@ public:
 	void drop(string element);
 	void accessRoom(Room* room);
 	void getInventory();
+	vector<string> get_items_taken();
 
 };

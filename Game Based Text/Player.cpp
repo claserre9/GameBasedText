@@ -49,6 +49,10 @@ void Player::getInventory(){
 
 }
 
+vector<string> Player::get_items_taken(){
+	return this->inventory;
+}
+
 void Player::take(string element) {
 		this->inventory.push_back(element);
 }
