@@ -10,6 +10,10 @@ using namespace std;
 
 
 int main() {
+	string dummy;
+	displayStory();
+	cout << "Press any key to continue ...." << endl;
+	cin >> dummy;
 
 	Player usmarine("Clifford", 10);
 
