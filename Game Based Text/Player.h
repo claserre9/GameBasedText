@@ -23,9 +23,10 @@ public:
 	//void defend();
 
 	void search();
-	void look();
 	void open();
-	void take();
-	void drop();
+	void take(string element);
+	void drop(string element);
+	void accessRoom(Room* room);
+	void getInventory();
 
 };
