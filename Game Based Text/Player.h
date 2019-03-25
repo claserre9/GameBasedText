@@ -32,5 +32,6 @@ public:
 	void setHealth(int h);
 	int getHealth();
 	vector<string> get_items_taken();
+	bool keyExist();
 
 };

@@ -61,6 +61,15 @@ vector<string> Player::get_items_taken(){
 	return this->inventory;
 }
 
+bool Player::keyExist(){
+	if (find(this->inventory.begin(), this->inventory.end(), "Key") != this->inventory.end()) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 void Player::take(string element) {
 		this->inventory.push_back(element);
 }
